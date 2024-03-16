@@ -7,9 +7,13 @@ vim.keymap.set('n', '<leader>o', ':Neotree float git_status<CR>')
 
 -- Navigation
 vim.keymap.set('n', '<a-k>', ':wincmd k<CR>')
+vim.keymap.set('n', '<a-up>', ':wincmd k<CR>')
 vim.keymap.set('n', '<a-j>', ':wincmd j<CR>')
+vim.keymap.set('n', '<a-down>', ':wincmd j<CR>')
 vim.keymap.set('n', '<a-h>', ':wincmd h<CR>')
+vim.keymap.set('n', '<a-left>', ':wincmd h<CR>')
 vim.keymap.set('n', '<a-l>', ':wincmd l<CR>')
+vim.keymap.set('n', '<a-right>', ':wincmd l<CR>')
 vim.keymap.set('n', '<leader>/', ':CommentToggle<CR>')
 
 -- Splits
