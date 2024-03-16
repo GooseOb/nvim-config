@@ -1,19 +1,21 @@
 local null_ls = require("null-ls")
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
-local has_eslint_config = vim.fn.glob(".eslintrc.*") ~= ""
-
 null_ls.setup({
 	sources = {
-		has_eslint_config and null_ls.builtins.formatting.eslint_d.with({
+		null_ls.builtins.formatting.eslint_d.with({
 			filetypes = {
 				"typescript",
 				"javascript",
 				"typescriptreact",
 				"javascriptreact",
 			},
-		}) or nil,
-		has_eslint_config and null_ls.builtins.diagnostics.eslint_d or nil,
+		}),
+		null_ls.builtins.diagnostics.eslint_d.with({
+			condition = function(utils)
+				return utils.root_has_file({ ".eslintrc.js", ".eslintrc.cjs" })
+			end,
+		}),
 		null_ls.builtins.formatting.lua_format,
 		null_ls.builtins.formatting.stylua,
 		null_ls.builtins.diagnostics.ltrs,
