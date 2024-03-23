@@ -52,6 +52,15 @@ require("lazy").setup({
 	{ "folke/which-key.nvim" },
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 	{
-		"github/copilot.vim",
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
 	},
+	{
+		"zbirenbaum/copilot-cmp",
+		config = function()
+			require("copilot_cmp").setup()
+		end,
+	},
+	{ "onsails/lspkind.nvim" },
 })
