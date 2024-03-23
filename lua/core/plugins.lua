@@ -50,5 +50,8 @@ require("lazy").setup({
 	{ "terrortylor/nvim-comment" },
 	{ "lewis6991/gitsigns.nvim" },
 	{ "folke/which-key.nvim" },
-	{'akinsho/toggleterm.nvim', version = "*", config = true},
+	{ "akinsho/toggleterm.nvim", version = "*", config = true },
+	{
+		"github/copilot.vim",
+	},
 })

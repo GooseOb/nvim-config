@@ -1,14 +1,20 @@
-require'nvim-treesitter.configs'.setup {
+require("nvim-treesitter.configs").setup({
 	ensure_installed = {
-		"c", "cpp",
+		"c",
+		"cpp",
 		"lua",
-		"html", "css", "scss",
-		"javascript", "typescript",
+		"html",
+		"css",
+		"scss",
+		"javascript",
+		"typescript",
 		"tsx",
-		"json", "yaml", "toml",
+		"json",
+		"yaml",
+		"toml",
 		"bash",
 		"markdown",
-		"rust"
+		"rust",
 	},
 
 	sync_install = false,
@@ -16,5 +22,5 @@ require'nvim-treesitter.configs'.setup {
 
 	highlight = {
 		enable = true,
-	}
-}
+	},
+})
