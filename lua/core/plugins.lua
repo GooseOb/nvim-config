@@ -57,9 +57,6 @@ require("lazy").setup({
 	},
 	{
 		"zbirenbaum/copilot-cmp",
-		config = function()
-			require("copilot_cmp").setup()
-		end,
 	},
 	{ "onsails/lspkind.nvim" },
 	{
