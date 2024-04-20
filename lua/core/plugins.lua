@@ -41,7 +41,6 @@ require("lazy").setup({
 		dependencies = { "nvim-lua/plenary.nvim" },
 	},
 	{ "jose-elias-alvarez/null-ls.nvim" },
-	{ "windwp/nvim-autopairs" },
 	{ "windwp/nvim-ts-autotag" },
 	{
 		"akinsho/bufferline.nvim",
@@ -63,4 +62,9 @@ require("lazy").setup({
 		end,
 	},
 	{ "onsails/lspkind.nvim" },
+	{
+		"kylechui/nvim-surround",
+		version = "*", -- Use for stability; omit to use `main` branch for the latest features
+		event = "VeryLazy",
+	},
 })
