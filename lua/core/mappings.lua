@@ -18,8 +18,6 @@ vim.keymap.set("t", "<a-left>", "<cmd>:wincmd h<CR>")
 vim.keymap.set("n", "<a-right>", ":wincmd l<CR>")
 vim.keymap.set("t", "<a-right>", "<cmd>:wincmd l<CR>")
 
-vim.keymap.set("n", "<leader>/", ":CommentToggle<CR>")
-
 -- Splits
 vim.keymap.set("n", "|", ":v tsplit<CR>")
 vim.keymap.set("n", "\\", ":split<CR>")
@@ -41,6 +39,8 @@ vim.keymap.set("t", "<a-t>", "<cmd>" .. primary_term)
 vim.keymap.set("n", "gs", ":Gitsigns")
 
 -- Other
+vim.keymap.set("n", "<leader>/", ":CommentToggle<CR>")
+
 vim.keymap.set("i", "<c-s>", "<cmd>:w<CR>")
 vim.keymap.set("n", "<c-s>", ":w<CR>")
 vim.keymap.set("n", "<leader>w", ":w<CR>")
