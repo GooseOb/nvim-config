@@ -7,11 +7,8 @@ vim.keymap.set("n", "<leader>o", ":Neotree float git_status<CR>")
 
 -- Navigation
 vim.keymap.set({ "n", "t" }, "<a-up>", "<cmd>:wincmd k<CR>")
-
 vim.keymap.set({ "n", "t" }, "<a-down>", "<cmd>:wincmd j<CR>")
-
 vim.keymap.set({ "n", "t" }, "<a-left>", "<cmd>:wincmd h<CR>")
-
 vim.keymap.set({ "n", "t" }, "<a-right>", "<cmd>:wincmd l<CR>")
 
 -- Splits
