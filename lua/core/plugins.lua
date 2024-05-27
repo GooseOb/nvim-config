@@ -12,9 +12,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-	{ "phaazon/hop.nvim" },
+	{
+		"phaazon/hop.nvim",
+		cmd = { "HopWord", "HopLine" },
+	},
 	{
 		"nvim-neo-tree/neo-tree.nvim",
+		cmd = "Neotree",
 		branch = "v3.x",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
@@ -23,9 +27,15 @@ require("lazy").setup({
 			-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
 		},
 	},
-	{ "nvim-treesitter/nvim-treesitter" },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		event = { "BufReadPost", "BufNewFile" },
+	},
 	{ "neovim/nvim-lspconfig" },
-	{ "joshdick/onedark.vim" },
+	{
+		"joshdick/onedark.vim",
+		lazy = false,
+	},
 	{ "hrsh7th/cmp-nvim-lsp" },
 	{ "hrsh7th/cmp-buffer" },
 	{ "hrsh7th/cmp-path" },
@@ -46,10 +56,18 @@ require("lazy").setup({
 		"akinsho/bufferline.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
-	{ "terrortylor/nvim-comment" },
+	{
+		"terrortylor/nvim-comment",
+		keys = { "gc", "gcc", "gbc" },
+	},
 	{ "lewis6991/gitsigns.nvim" },
 	{ "folke/which-key.nvim" },
-	{ "akinsho/toggleterm.nvim", version = "*", config = true },
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		config = true,
+		cmd = "ToggleTerm",
+	},
 	{
 		"zbirenbaum/copilot.lua",
 		cmd = "Copilot",
