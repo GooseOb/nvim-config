@@ -48,7 +48,7 @@ require("lazy").setup({
 	{
 		"nvim-telescope/telescope.nvim",
 		branch = "0.1.x",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		dependencies = { "nvim-lua/plenary.nvim", "BurntSushi/ripgrep" },
 	},
 	{ "jose-elias-alvarez/null-ls.nvim" },
 	{ "windwp/nvim-ts-autotag" },
