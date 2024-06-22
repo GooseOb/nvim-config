@@ -33,6 +33,8 @@ vim.keymap.set("n", "gs", ":Gitsigns")
 -- Other
 vim.keymap.set("n", "<leader>/", ":CommentToggle<CR>")
 
+vim.keymap.set("n", "<a-v>", "ggVG")
+
 vim.keymap.set({ "n", "i" }, "<c-s>", "<cmd>:w<CR>")
 vim.keymap.set("n", "<leader>w", ":w<CR>")
 
