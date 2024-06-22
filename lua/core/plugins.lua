@@ -13,10 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
-		"phaazon/hop.nvim",
-		cmd = { "HopWord", "HopLine" },
-	},
-	{
 		"nvim-neo-tree/neo-tree.nvim",
 		cmd = "Neotree",
 		branch = "v3.x",
