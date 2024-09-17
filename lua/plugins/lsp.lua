@@ -1,6 +1,6 @@
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
--- Sntup language servers.
+-- Setup language servers.
 local lspconfig = require("lspconfig")
 lspconfig.tsserver.setup({})
 lspconfig.cssls.setup({
@@ -19,6 +19,7 @@ lspconfig.rust_analyzer.setup({
 	},
 })
 lspconfig.clangd.setup({})
+lspconfig.emmet_ls.setup({})
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions

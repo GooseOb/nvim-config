@@ -12,6 +12,8 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+	{ "hrsh7th/vim-vsnip" },
+	{ "hrsh7th/vim-vsnip-integ" },
 	{
 		"nvim-neo-tree/neo-tree.nvim",
 		cmd = "Neotree",
