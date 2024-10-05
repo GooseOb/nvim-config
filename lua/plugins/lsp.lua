@@ -20,6 +20,23 @@ lspconfig.rust_analyzer.setup({
 })
 lspconfig.clangd.setup({})
 lspconfig.emmet_ls.setup({})
+lspconfig.jdtls.setup({
+	capabilities = capabilities,
+	on_attach = function(client, bufnr)
+		-- Enable completion triggered by <c-x><c-o>
+		vim.bo[bufnr].omnifunc = "v:lua.vim.lsp.omnifunc"
+		local opts = { buffer = bufnr }
+		vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+		vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+		vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
+		vim.keymap.set("n", "<Leader>lr", vim.lsp.buf.rename, opts)
+		vim.keymap.set({ "n", "v" }, "<Leader>la", vim.lsp.buf.code_action, opts)
+		vim.keymap.set("n", "<Leader>lf", function()
+			vim.lsp.buf.format({ async = true })
+		end, opts)
+	end,
+})
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
