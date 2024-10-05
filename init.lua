@@ -6,6 +6,7 @@ require("core.colors")
 
 -- Plugins
 require("plugins.neotree")
+require("plugins.treesitter-migrate")
 require("plugins.treesitter")
 require("plugins.lsp")
 require("plugins.cmp")
