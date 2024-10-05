@@ -23,6 +23,7 @@ null_ls.setup({
 		null_ls.builtins.formatting.prettier.with({
 			filetypes = {
 				"css",
+				"vue",
 				"javascript",
 				"typescript",
 				"scss",

@@ -3,8 +3,10 @@ require("nvim-treesitter.configs").setup({
 		"c",
 		"cpp",
 		"lua",
+		"html",
 		"css",
 		"scss",
+		"vue",
 		"javascript",
 		"typescript",
 		"tsx",
@@ -21,6 +23,5 @@ require("nvim-treesitter.configs").setup({
 
 	highlight = {
 		enable = true,
-		disable = { "html" },
 	},
 })
