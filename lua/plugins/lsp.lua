@@ -26,6 +26,10 @@ lspconfig.jdtls.setup({
 lspconfig.html.setup({
 	capabilities = capabilities,
 })
+lspconfig.bashls.setup({
+	capabilities = capabilities,
+	filetypes = { "sh", "bash", "zsh" },
+})
 
 local masonPackagesPath = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/"
 lspconfig.volar.setup({
