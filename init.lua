@@ -2,7 +2,6 @@
 require("core.plugins")
 require("core.mappings")
 require("core.configs")
-require("core.colors")
 
 -- Plugins
 require("plugins.neotree")
