@@ -74,11 +74,17 @@ require("lazy").setup({
 	},
 	-- File icons
 	{ "onsails/lspkind.nvim" },
-	-- Other
+	-- Status line
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+	-- Buffer line
 	{
 		"akinsho/bufferline.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
+	-- Other
 	{ "folke/which-key.nvim" },
 	{
 		"terrortylor/nvim-comment",
