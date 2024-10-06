@@ -30,7 +30,7 @@ lspconfig.bashls.setup({
 	capabilities = capabilities,
 	filetypes = { "sh", "bash", "zsh" },
 })
-require("lspconfig").lua_ls.setup({
+lspconfig.lua_ls.setup({
 	capabilities = capabilities,
 	settings = {
 		Lua = {
