@@ -23,6 +23,9 @@ lspconfig.emmet_ls.setup({})
 lspconfig.jdtls.setup({
 	capabilities = capabilities,
 })
+lspconfig.html.setup({
+	capabilities = capabilities,
+})
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
