@@ -1,19 +1,13 @@
 vim.opt.termguicolors = true
 
-local to_migrate = {
-	["onedark"] = true,
-}
+local function set_color(color)
+	local to_migrate = {
+		["onedark"] = true,
+	}
 
-local to_make_bg_dark = {
-	["onedark"] = true,
-}
-
-function SetColor(color)
-	if string.find(color, "kanagawa") then
-		require("kanagawa").setup({
-			keywordStyle = { italic = false },
-		})
-	end
+	local to_make_bg_dark = {
+		["onedark"] = true,
+	}
 
 	vim.cmd.colorscheme(color)
 
@@ -29,4 +23,13 @@ function SetColor(color)
 	end
 end
 
-SetColor("kanagawa-wave")
+local function set_kanagawa_wave()
+	require("kanagawa").setup({
+		compile = true,
+		keywordStyle = { italic = false },
+		commentStyle = { italic = false },
+	})
+	vim.cmd.colorscheme("kanagawa-wave")
+end
+
+set_kanagawa_wave()
