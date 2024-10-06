@@ -30,10 +30,10 @@ require("lazy").setup({
 		event = { "BufReadPost", "BufNewFile" },
 	},
 	{ "neovim/nvim-lspconfig" },
-	{
-		"joshdick/onedark.vim",
-		lazy = false,
-	},
+	-- Color schemes
+	{ "joshdick/onedark.vim" },
+	{ "catppuccin/nvim", name = "catppuccin" },
+	{ "rebelot/kanagawa.nvim", lazy = false },
 	{ "hrsh7th/cmp-nvim-lsp" },
 	{ "hrsh7th/cmp-buffer" },
 	{ "hrsh7th/cmp-path" },
