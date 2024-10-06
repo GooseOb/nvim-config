@@ -26,6 +26,8 @@ vim.keymap.set("n", "<leader>tf", ":ToggleTerm direction=float<CR>")
 vim.keymap.set("n", "<leader>th", ":ToggleTerm direction=horizontal<CR>")
 vim.keymap.set("n", "<leader>tv", vertical_term)
 vim.keymap.set({ "n", "t" }, "<a-t>", "<cmd>" .. primary_term)
+-- Escape terminal
+vim.keymap.set("t", "<esc>", "<C-\\><C-n>")
 
 -- Command shortcuts
 vim.keymap.set("n", "gs", ":Gitsigns")
