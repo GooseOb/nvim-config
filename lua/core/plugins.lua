@@ -33,6 +33,8 @@ require("lazy").setup({
 		event = { "BufReadPost", "BufNewFile" },
 	},
 	{ "windwp/nvim-ts-autotag" }, -- Auto close tags
+	-- Color highlighting
+	{ "brenoprata10/nvim-highlight-colors" },
 	-- LSP
 	{ "neovim/nvim-lspconfig" },
 	{ "jose-elias-alvarez/null-ls.nvim" }, -- archived, but still works
