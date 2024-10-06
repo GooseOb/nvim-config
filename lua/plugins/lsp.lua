@@ -27,6 +27,19 @@ lspconfig.html.setup({
 	capabilities = capabilities,
 })
 
+local masonPackagesPath = os.getenv("HOME") .. "/.local/share/nvim/mason/packages/"
+lspconfig.volar.setup({
+	capabilities = capabilities,
+	filetypes = {
+		"vue",
+	},
+	init_options = {
+		typescript = {
+			tsdk = masonPackagesPath .. "vue-language-server/node_modules/typescript/lib",
+		},
+	},
+})
+
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set("n", "<leader>lD", vim.diagnostic.open_float)
