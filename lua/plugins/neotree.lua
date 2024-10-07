@@ -7,15 +7,18 @@ require("neo-tree").setup({
 		mappings = {
 			["d"] = function(state)
 				local path = state.tree:get_node().path
-				local is_tracked = vim.fn.systemlist("git ls-files " .. path)[1]
-				if is_tracked then
-					vim.fn.system("git rm -f " .. path)
-					print("Staged deleted file: " .. path)
-				else
-					vim.fn.delete(path)
-					print("Deleted file: " .. path)
+				local confirm = vim.fn.input("Are you sure you want to delete '" .. path .. "'? (y/n): ")
+				if confirm:lower() == "y" then
+					local is_tracked = vim.fn.systemlist("git ls-files " .. path)[1]
+					if is_tracked then
+						vim.fn.system("git rm -f " .. path)
+						print("Staged deleted file: " .. path)
+					else
+						vim.fn.delete(path)
+						print("Deleted file: " .. path)
+					end
+					require("neo-tree.sources.manager").refresh(state)
 				end
-				require("neo-tree.sources.manager").refresh(state)
 			end,
 		},
 	},
