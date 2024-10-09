@@ -47,6 +47,7 @@ require("lazy").setup({
 	-- LSP
 	{ "neovim/nvim-lspconfig" },
 	{ "jose-elias-alvarez/null-ls.nvim" }, -- archived, but still works
+	{ "onsails/lspkind.nvim" },
 	-- Color schemes
 	{ "joshdick/onedark.vim" },
 	{ "catppuccin/nvim", name = "catppuccin" },
@@ -83,8 +84,6 @@ require("lazy").setup({
 		config = true,
 		cmd = "ToggleTerm",
 	},
-	-- File icons
-	{ "onsails/lspkind.nvim" },
 	-- Status line
 	{
 		"nvim-lualine/lualine.nvim",
