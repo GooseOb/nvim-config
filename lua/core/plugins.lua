@@ -14,11 +14,14 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	-- Startup screen
 	{
-		"startup-nvim/startup.nvim",
+		"nvimdev/dashboard-nvim",
+		event = "VimEnter",
+		dependencies = { { "nvim-tree/nvim-web-devicons" } },
+	},
+	{
+		"MaximilianLloyd/ascii.nvim",
 		dependencies = {
-			"nvim-telescope/telescope.nvim",
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope-file-browser.nvim",
+			"MunifTanjim/nui.nvim",
 		},
 	},
 	-- Snippets

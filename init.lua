@@ -21,7 +21,7 @@ require("plugins.copilot")
 require("plugins.surround")
 require("plugins.lualine")
 require("plugins.color-highlight")
-require("plugins.startup")
+require("plugins.dashboard")
 
 -- Color scheme
 require("colors.kanagawa")
