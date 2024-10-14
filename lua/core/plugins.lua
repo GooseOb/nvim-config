@@ -97,12 +97,14 @@ require("lazy").setup({
 		"akinsho/bufferline.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
-	-- Other
-	{ "folke/which-key.nvim" },
+	-- Comments
 	{
 		"terrortylor/nvim-comment",
 		keys = { "gc", "gcc", "gbc" },
 	},
+	{ "JoosepAlviste/nvim-ts-context-commentstring" },
+	-- Other
+	{ "folke/which-key.nvim" },
 	{
 		"kylechui/nvim-surround",
 		version = "*", -- Use for stability; omit to use `main` branch for the latest features

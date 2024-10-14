@@ -56,6 +56,9 @@ lspconfig.volar.setup({
 		typescript = {
 			tsdk = masonPackagesPath .. "vue-language-server/node_modules/typescript/lib",
 		},
+		vue = {
+			hybridMode = false,
+		},
 	},
 })
 
