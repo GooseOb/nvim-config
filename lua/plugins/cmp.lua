@@ -54,6 +54,7 @@ cmp.setup({
 	}),
 
 	sources = cmp.config.sources({
+		{ name = "emoji" },
 		{ name = "nvim_lsp" },
 		{ name = "vsnip" }, -- For vsnip users.
 		-- Copilot Source
