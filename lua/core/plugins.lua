@@ -25,8 +25,12 @@ require("lazy").setup({
 		},
 	},
 	-- Snippets
-	{ "hrsh7th/vim-vsnip" },
-	{ "hrsh7th/vim-vsnip-integ" },
+	{
+		"L3MON4D3/LuaSnip",
+		version = "v2.*",
+		build = "make install_jsregexp",
+	},
+	{ "saadparwaiz1/cmp_luasnip" },
 	-- File tree
 	{
 		"nvim-neo-tree/neo-tree.nvim",

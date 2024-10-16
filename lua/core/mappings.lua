@@ -45,3 +45,5 @@ vim.keymap.set("n", "<leader>q", ":bd<CR>")
 vim.keymap.set("n", "<leader>X", ":BufferLineCloseRight<CR>")
 vim.keymap.set("n", "<leader>s", ":BufferLineSortByTabs<CR>")
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
+
+require("snippets.mappings")

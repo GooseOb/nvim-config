@@ -26,3 +26,9 @@ require("plugins.dashboard")
 
 -- Color scheme
 require("colors.kanagawa")
+
+-- Commands
+require("commands.JavaClass")
+
+-- Snippets
+require("snippets.java")
