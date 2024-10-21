@@ -25,6 +25,7 @@ local function get_java_filenames(type, directory)
 	return filenames
 end
 
+-- JavaCreate class/interface name [extends] [implements...]
 vim.api.nvim_create_user_command("JavaCreate", function(opts)
 	local args = vim.split(opts.args, " ")
 	local prefix, name = args[1], args[2]
@@ -43,19 +44,30 @@ end, {
 	nargs = "+",
 	complete = function(arg_lead, cmdline)
 		local matches = {}
-		local arg_num = #vim.split(cmdline, " ")
+		local args = vim.split(cmdline, " ")
+		local arg_num = #args
 
 		if arg_num == 2 then
 			for _, class in ipairs({
 				"class",
 				"interface",
 			}) do
-				if class:lower():find(arg_lead:lower(), 1, true) then
+				if class:find(arg_lead:lower(), 1, true) then
 					table.insert(matches, class)
 				end
 			end
 		elseif arg_num > 3 then
-			local type = arg_num == 4 and "class" or "interface"
+			local type = "class"
+			local is_class = args[2] == "class"
+			if is_class then
+				if arg_num > 4 then
+					type = "interface"
+				end
+			elseif arg_num == 4 then
+				type = "interface"
+			else
+				return {}
+			end
 			for _, class in ipairs(get_java_filenames(type, vim.fn.getcwd())) do
 				if class:lower():find(arg_lead:lower(), 1, true) then
 					table.insert(matches, class)

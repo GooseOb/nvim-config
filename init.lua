@@ -28,7 +28,7 @@ require("plugins.dashboard")
 require("colors.kanagawa")
 
 -- Commands
-require("commands.JavaClass")
+require("commands.JavaCreate")
 
 -- Snippets
 require("snippets.java")
