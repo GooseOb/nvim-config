@@ -28,12 +28,15 @@ end
 -- JavaCreate class/interface name [extends] [implements...]
 vim.api.nvim_create_user_command("JavaCreate", function(opts)
 	local args = vim.split(opts.args, " ")
-	local prefix, name = args[1], args[2]
+	local prefix, name = args[1]:lower(), cap_first(args[2])
 	local extends = (args[3] and args[3] ~= "-") and " extends " .. cap_first(args[3]) or ""
-	local implements = #args > 3 and " implements " .. table.concat(map_mut(slice(args, 4), cap_first), ", ") or ""
+	local implements = #args > 3
+			and prefix ~= "interface"
+			and " implements " .. table.concat(map_mut(slice(args, 4), cap_first), ", ")
+		or ""
 	vim.cmd.edit(name .. ".java")
 	local lines = {
-		"public " .. prefix:lower() .. " " .. name .. extends .. implements .. " {",
+		"public " .. prefix .. " " .. name .. extends .. implements .. " {",
 		"\t",
 		"}",
 	}
@@ -46,31 +49,34 @@ end, {
 		local matches = {}
 		local args = vim.split(cmdline, " ")
 		local arg_num = #args
+		arg_lead = arg_lead:lower()
 
 		if arg_num == 2 then
 			for _, class in ipairs({
 				"class",
 				"interface",
 			}) do
-				if class:find(arg_lead:lower(), 1, true) then
+				if class:find(arg_lead, 1, true) then
 					table.insert(matches, class)
 				end
 			end
 		elseif arg_num > 3 then
-			local type = "class"
-			local is_class = args[2] == "class"
-			if is_class then
-				if arg_num > 4 then
-					type = "interface"
+			local type = "interface"
+			local do_search = true
+
+			if args[2] == "class" then
+				if arg_num == 4 then
+					type = "class"
 				end
-			elseif arg_num == 4 then
-				type = "interface"
-			else
-				return {}
+			elseif arg_num > 4 then
+				do_search = false
 			end
-			for _, class in ipairs(get_java_filenames(type, vim.fn.getcwd())) do
-				if class:lower():find(arg_lead:lower(), 1, true) then
-					table.insert(matches, class)
+
+			if do_search then
+				for _, class in ipairs(get_java_filenames(type, vim.fn.getcwd())) do
+					if class:lower():find(arg_lead, 1, true) then
+						table.insert(matches, class)
+					end
 				end
 			end
 		end
