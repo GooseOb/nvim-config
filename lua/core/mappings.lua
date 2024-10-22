@@ -20,12 +20,7 @@ vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>")
 vim.keymap.set("n", "<s-Tab>", ":BufferLineCyclePrev<CR>")
 
 -- Terminal
-local vertical_term = ":ToggleTerm direction=vertical size=40<CR>"
-local primary_term = vertical_term
-vim.keymap.set("n", "<leader>tf", ":ToggleTerm direction=float<CR>")
-vim.keymap.set("n", "<leader>th", ":ToggleTerm direction=horizontal<CR>")
-vim.keymap.set("n", "<leader>tv", vertical_term)
-vim.keymap.set({ "n", "t" }, "<a-t>", "<cmd>" .. primary_term)
+vim.keymap.set({ "n", "t" }, "<a-t>", "<cmd>:ToggleTerm direction=vertical size=50<CR>")
 -- Escape terminal
 vim.keymap.set("t", "<esc>", "<C-\\><C-n>")
 
@@ -40,10 +35,7 @@ vim.keymap.set("n", "<a-v>", "ggVG")
 vim.keymap.set({ "n", "i" }, "<c-s>", "<cmd>:w<CR>")
 vim.keymap.set("n", "<leader>w", ":w<CR>")
 
-vim.keymap.set("n", "<leader>x", ":BufferLinePickClose<CR>")
 vim.keymap.set("n", "<leader>q", ":bp | bd #<CR>")
-vim.keymap.set("n", "<leader>X", ":BufferLineCloseRight<CR>")
-vim.keymap.set("n", "<leader>s", ":BufferLineSortByTabs<CR>")
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 
 require("snippets.mappings")

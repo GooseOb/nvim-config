@@ -97,11 +97,6 @@ require("lazy").setup({
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
-	-- Buffer line
-	{
-		"akinsho/bufferline.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-	},
 	-- Comments
 	{
 		"terrortylor/nvim-comment",
