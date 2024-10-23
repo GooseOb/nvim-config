@@ -12,7 +12,7 @@ vim.keymap.set({ "n", "t" }, "<a-left>", "<cmd>:wincmd h<CR>")
 vim.keymap.set({ "n", "t" }, "<a-right>", "<cmd>:wincmd l<CR>")
 
 -- Splits
-vim.keymap.set("n", "|", ":v tsplit<CR>")
+vim.keymap.set("n", "|", ":vsplit<CR>")
 vim.keymap.set("n", "\\", ":split<CR>")
 
 -- Tabs
@@ -33,7 +33,6 @@ vim.keymap.set("n", "<leader>/", ":CommentToggle<CR>")
 vim.keymap.set("n", "<a-v>", "ggVG")
 
 vim.keymap.set({ "n", "i" }, "<c-s>", "<cmd>:w<CR>")
-vim.keymap.set("n", "<leader>w", ":w<CR>")
 
 vim.keymap.set("n", "<leader>q", ":bp | bd #<CR>")
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
