@@ -1,6 +1,6 @@
-local map_mut = require("helpers.map_mut")
 local slice = require("helpers.slice")
-local cap_first = require("helpers.cap_first")
+local map_mut = require("helpers.map-mut")
+local cap_first = require("helpers.cap-first")
 
 local function get_java_filenames(type, directory)
 	local files = vim.fn.glob(directory .. "/*.java", true, true)
