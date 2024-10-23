@@ -29,7 +29,7 @@ vim.keymap.set("t", "<esc>", "<C-\\><C-n>")
 vim.keymap.set("n", "gs", ":Gitsigns")
 
 -- Other
-vim.keymap.set("n", "<leader>/", ":CommentToggle<CR>")
+vim.keymap.set({ "n", "v" }, "<leader>/", ":CommentToggle<CR>")
 
 vim.keymap.set("n", "<a-v>", "ggVG")
 
