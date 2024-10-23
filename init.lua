@@ -22,6 +22,7 @@ require("plugins.lualine")
 require("plugins.color-highlight")
 require("plugins.dashboard")
 require("plugins.conform")
+require("plugins.lint")
 
 -- Color scheme
 require("colors.kanagawa")

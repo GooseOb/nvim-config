@@ -105,6 +105,7 @@ require("lazy").setup({
 	},
 	{ "JoosepAlviste/nvim-ts-context-commentstring" },
 	-- Other
+	{ "mfussenegger/nvim-lint" },
 	{ "folke/which-key.nvim" },
 	{
 		"kylechui/nvim-surround",
