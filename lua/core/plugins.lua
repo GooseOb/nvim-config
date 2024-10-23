@@ -53,8 +53,9 @@ require("lazy").setup({
 	{ "brenoprata10/nvim-highlight-colors" },
 	-- LSP
 	{ "neovim/nvim-lspconfig" },
-	{ "jose-elias-alvarez/null-ls.nvim" }, -- archived, but still works
 	{ "onsails/lspkind.nvim" },
+	-- Formatter
+	{ "stevearc/conform.nvim" },
 	-- Color schemes
 	{ "joshdick/onedark.vim" },
 	{ "catppuccin/nvim", name = "catppuccin" },
