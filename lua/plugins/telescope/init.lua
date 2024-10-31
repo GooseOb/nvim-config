@@ -1,3 +1,10 @@
+require("telescope").setup({
+	defaults = {
+		sorting_strategy = "ascending",
+		layout_strategy = "horizontal",
+		layout_config = { prompt_position = "top" },
+	},
+})
 local builtin = require("telescope.builtin")
 local search_buf = require("plugins.telescope.searchbuf")
 
