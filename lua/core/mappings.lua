@@ -19,8 +19,7 @@ s("n", "|", ":vsplit<CR>")
 s("n", "\\", ":split<CR>")
 
 -- Tabs
-s("n", "<Tab>", ":BufferLineCycleNext<CR>")
-s("n", "<s-Tab>", ":BufferLineCyclePrev<CR>")
+s("n", "<s-Tab>", ":b #<CR>")
 
 -- Terminal
 s({ "n", "t" }, "<a-t>", "<cmd>:ToggleTerm direction=vertical size=50<CR>")
