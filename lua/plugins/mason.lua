@@ -18,6 +18,7 @@ ensure_installed({
 	"eslint_d",
 	"google-java-format",
 	"html-lsp",
+	"css-lsp",
 	"jdtls",
 	"lua-language-server",
 	"prettier",
