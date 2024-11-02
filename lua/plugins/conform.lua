@@ -21,6 +21,11 @@ local ft_by_formatter = {
 		"graphql",
 		"handlebars",
 	},
+	shfmt = {
+		"sh",
+		"zsh",
+		"bash",
+	},
 }
 
 for formatter, fts in pairs(ft_by_formatter) do
