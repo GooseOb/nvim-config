@@ -22,11 +22,11 @@ require("lualine").setup({
 			},
 		},
 		lualine_c = {
+			{ "copilot", show_colors = true },
 			"filename",
 		},
 		lualine_x = {
 			{
-				icon = "#",
 				function()
 					local prev_bufnr = vim.fn.bufnr("#")
 					if prev_bufnr ~= -1 then
