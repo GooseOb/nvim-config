@@ -26,7 +26,7 @@ require("lualine").setup({
 		},
 		lualine_x = {
 			{
-				icon = "<s-Tab>",
+				icon = "#",
 				function()
 					local prev_bufnr = vim.fn.bufnr("#")
 					if prev_bufnr ~= -1 then
