@@ -3,6 +3,9 @@ require("core.plugins")
 require("core.mappings")
 require("core.configs")
 
+-- Color scheme
+require("colors.kanagawa")
+
 -- Plugins
 require("plugins.neotree")
 require("plugins.treesitter")
@@ -23,9 +26,6 @@ require("plugins.color-highlight")
 require("plugins.dashboard")
 require("plugins.conform")
 require("plugins.lint")
-
--- Color scheme
-require("colors.kanagawa")
 
 -- Commands
 require("commands.JavaCreate")
