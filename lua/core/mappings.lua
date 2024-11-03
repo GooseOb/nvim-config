@@ -26,6 +26,13 @@ s({ "n", "t" }, "<a-t>", "<cmd>:ToggleTerm direction=vertical size=50<CR>")
 -- Escape terminal
 s("t", "<esc>", "<C-\\><C-n>")
 
+-- Enter select mode from insert mode
+-- not sure if this is useful
+s("i", "<S-Left>", "<esc>gh")
+s("i", "<S-Right>", "<esc><Right>gh")
+s("i", "<S-Down>", "<esc><Right>gh<Down>")
+s("i", "<S-Up>", "<esc>gh<Up>")
+
 -- Command shortcuts
 s("n", "gs", ":Gitsigns")
 
