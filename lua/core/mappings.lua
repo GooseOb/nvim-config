@@ -32,8 +32,6 @@ s("n", "gs", ":Gitsigns")
 -- Other
 s({ "n", "v" }, "<leader>/", ":CommentToggle<CR>")
 
-s("n", "<a-v>", "ggVG")
-
 s({ "n", "i" }, "<c-s>", "<cmd>:w<CR>")
 
 s("n", "<leader>q", ":bp | bd #<CR>")
