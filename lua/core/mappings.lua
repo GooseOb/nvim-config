@@ -44,5 +44,3 @@ _G.ReplaceWithYank = function()
 end
 
 s("n", "r", ":set opfunc=v:lua.ReplaceWithYank<CR>g@")
-
-require("snippets.mappings")

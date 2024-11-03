@@ -31,4 +31,5 @@ require("plugins.lint")
 require("commands.JavaCreate")
 
 -- Snippets
+require("snippets.mappings")
 require("snippets.java")
