@@ -19,7 +19,8 @@ s("n", "|", ":vsplit<CR>")
 s("n", "\\", ":split<CR>")
 
 -- Tabs
-s("n", "<s-Tab>", ":b #<CR>")
+s("n", "<s-Tab>", ":bp<CR>")
+s("n", "<Tab>", ":bn<CR>")
 
 -- Terminal
 s({ "n", "t" }, "<a-t>", "<cmd>:ToggleTerm direction=vertical size=50<CR>")
