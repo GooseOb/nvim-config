@@ -19,8 +19,8 @@ s("n", "|", ":vsplit<CR>")
 s("n", "\\", ":split<CR>")
 s({ "n", "t" }, "-", "<cmd>:vertical resize -2<CR>")
 s({ "n", "t" }, "=", "<cmd>:vertical resize +2<CR>")
-s({ "n", "t" }, "_", "<cmd>:resize -2<CR>")
-s({ "n", "t" }, "+", "<cmd>:resize +2<CR>")
+s({ "n", "t" }, "_", "<cmd>:resize -1<CR>")
+s({ "n", "t" }, "+", "<cmd>:resize +1<CR>")
 
 -- Tabs
 s("n", "<s-Tab>", ":bp<CR>")
