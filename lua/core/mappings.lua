@@ -17,10 +17,10 @@ s(all_modes, "<a-right>", "<cmd>:wincmd l<CR>")
 -- Splits
 s("n", "|", ":vsplit<CR>")
 s("n", "\\", ":split<CR>")
-s({ "n", "t" }, "-", "<cmd>:vertical resize -2<CR>")
-s({ "n", "t" }, "=", "<cmd>:vertical resize +2<CR>")
-s({ "n", "t" }, "_", "<cmd>:resize -1<CR>")
-s({ "n", "t" }, "+", "<cmd>:resize +1<CR>")
+s("n", "-", "<cmd>:vertical resize -2<CR>")
+s("n", "=", "<cmd>:vertical resize +2<CR>")
+s("n", "_", "<cmd>:resize -1<CR>")
+s("n", "+", "<cmd>:resize +1<CR>")
 
 -- Tabs
 s("n", "<s-Tab>", ":bp<CR>")
