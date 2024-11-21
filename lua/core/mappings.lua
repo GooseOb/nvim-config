@@ -29,7 +29,7 @@ s("n", "<Tab>", ":bn<CR>")
 -- Terminal
 s({ "n", "t" }, "<a-t>", "<cmd>:ToggleTerm direction=vertical size=50<CR>")
 -- Escape terminal
-s("t", "<esc>", "<C-\\><C-n>")
+s("t", "<esc><esc>", "<C-\\><C-n>")
 
 -- Enter select mode from insert mode
 -- not sure if this is useful
