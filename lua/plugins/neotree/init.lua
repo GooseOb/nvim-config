@@ -20,3 +20,5 @@ require("neo-tree").setup({
 
 vim.api.nvim_set_hl(0, "NeoTreeFloatTitle", { bg = "NONE", fg = "#938AA9" })
 vim.api.nvim_set_hl(0, "NeoTreeFloatBorder", { bg = "NONE", fg = "#938AA9" })
+
+require("plugins.neotree.mappings")
