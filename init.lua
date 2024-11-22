@@ -33,3 +33,4 @@ require("commands.JavaCreate")
 -- Snippets
 require("snippets.mappings")
 require("snippets.java")
+require("plugins.neogit")
