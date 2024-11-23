@@ -106,6 +106,7 @@ require("lazy").setup({
 	},
 	{ "JoosepAlviste/nvim-ts-context-commentstring" },
 	-- Other
+	{ "akinsho/bufferline.nvim" },
 	{ "mfussenegger/nvim-lint" },
 	{ "folke/which-key.nvim" },
 	{
