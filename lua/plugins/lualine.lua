@@ -25,19 +25,7 @@ require("lualine").setup({
 			{ "copilot", show_colors = true },
 			"filename",
 		},
-		lualine_x = {
-			{
-				function()
-					local prev_bufnr = vim.fn.bufnr("#")
-					if prev_bufnr ~= -1 then
-						return vim.fn.fnamemodify(vim.fn.bufname(prev_bufnr), ":t")
-					else
-						return ""
-					end
-				end,
-				color = { fg = "#70757e" },
-			},
-		},
+		lualine_x = {},
 		lualine_y = { "encoding", "fileformat", "filetype", "progress" },
 		lualine_z = {
 			"location",
