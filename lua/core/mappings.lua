@@ -44,6 +44,10 @@ s({ "n", "i" }, "<c-s>", "<cmd>:w<CR>")
 s("n", "<leader>q", ":bp | bd #<CR>")
 s("n", "<leader>h", ":nohlsearch<CR>")
 
+s("i", "<c-d>", "<c-o>dd")
+
+s("n", "<leader>x", ":BufferLinePickClose<CR>")
+
 _G.ReplaceWithYank = function()
 	vim.cmd('normal! `[v`]"_dP')
 end
