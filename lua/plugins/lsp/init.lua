@@ -1,5 +1,3 @@
-require("plugins.lsp.mappings")
-
 return {
 	"neovim/nvim-lspconfig",
 	event = { "BufReadPost", "BufNewFile" },
@@ -14,5 +12,7 @@ return {
 			config.capabilities = capabilities
 			lspconfig[name].setup(config)
 		end
+
+		require("plugins.lsp.mappings")
 	end,
 }
