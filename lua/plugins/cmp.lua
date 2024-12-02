@@ -7,7 +7,7 @@ return {
 		"hrsh7th/cmp-path",
 		"hrsh7th/cmp-cmdline",
 		"hrsh7th/cmp-emoji",
-		"zbirenbaum/copilot-cmp",
+		{ "zbirenbaum/copilot-cmp", config = true },
 	},
 	config = function()
 		local cmp = require("cmp")
