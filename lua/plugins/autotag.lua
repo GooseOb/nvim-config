@@ -14,4 +14,4 @@ return {
 			update_in_insert = true,
 		})
 	end,
-} -- Auto close tags
+}
