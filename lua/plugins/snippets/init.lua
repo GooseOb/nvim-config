@@ -4,4 +4,8 @@ return {
 	build = "make install_jsregexp",
 	event = "InsertEnter",
 	dependencies = "saadparwaiz1/cmp_luasnip",
+	config = function()
+		require("plugins.snippets.java")
+		require("plugins.snippets.mappings")
+	end,
 }
