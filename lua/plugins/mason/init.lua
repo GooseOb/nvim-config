@@ -2,6 +2,7 @@ return {
 	"williamboman/mason.nvim",
 	build = ":MasonUpdate",
 	event = "VeryLazy",
+	lazy = vim.fn.argc() == 0,
 	config = function()
 		require("mason").setup()
 
