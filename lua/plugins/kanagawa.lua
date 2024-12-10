@@ -17,6 +17,6 @@ return {
 		transparent = true,
 	},
 	init = function()
-		vim.cmd.colorscheme("kanagawa-wave")
+		require("kanagawa").load("wave")
 	end,
 }
