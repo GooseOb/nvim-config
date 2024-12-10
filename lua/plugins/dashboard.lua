@@ -2,17 +2,22 @@ return {
 	"nvimdev/dashboard-nvim",
 	lazy = #vim.v.argv > 2,
 	cmd = "Dashboard",
-	dependencies = {
-		{
-			"MaximilianLloyd/ascii.nvim",
-			dependencies = "MunifTanjim/nui.nvim",
-		},
-	},
 	config = function()
-		local header = require("ascii.text.neovim").sharp
-		table.insert(header, "")
-		table.insert(header, "")
-		table.insert(header, "")
+		local header = {
+			[[                                                                       ]],
+			[[                                                                     ]],
+			[[       ████ ██████           █████      ██                     ]],
+			[[      ███████████             █████                             ]],
+			[[      █████████ ███████████████████ ███   ███████████   ]],
+			[[     █████████  ███    █████████████ █████ ██████████████   ]],
+			[[    █████████ ██████████ █████████ █████ █████ ████ █████   ]],
+			[[  ███████████ ███    ███ █████████ █████ █████ ████ █████  ]],
+			[[ ██████  █████████████████████ ████ █████ █████ ████ ██████ ]],
+			[[                                                                       ]],
+			"",
+			"",
+			"",
+		}
 
 		local function item(icon, desc, key, action)
 			return { icon = icon .. "  ", desc = desc, key = key, action = action }
