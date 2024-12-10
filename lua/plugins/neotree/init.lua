@@ -1,11 +1,14 @@
 require("plugins.neotree.mappings")
 
-local argc = vim.fn.argc()
+local is_directory = function(path)
+	local stat = vim.loop.fs_stat(path)
+	return stat and stat.type == "directory"
+end
 
 return {
 	"nvim-neo-tree/neo-tree.nvim",
 	cmd = "Neotree",
-	lazy = argc ~= 1 or not vim.fn.isdirectory(argc),
+	lazy = #vim.v.argv < 3 or not is_directory(vim.v.argv[3]),
 	branch = "v3.x",
 	dependencies = {
 		"nvim-lua/plenary.nvim",

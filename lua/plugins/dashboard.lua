@@ -1,6 +1,6 @@
 return {
 	"nvimdev/dashboard-nvim",
-	lazy = vim.fn.argc() ~= 0,
+	lazy = #vim.v.argv > 2,
 	cmd = "Dashboard",
 	dependencies = {
 		{
