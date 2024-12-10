@@ -24,7 +24,7 @@ return {
 					item("󰈙", "Find File                  ", "f", ":Telescope find_files"),
 					item("󰉔", "Recent Files", "r", ":Telescope oldfiles"),
 					item("󰅱", "Config", "c", ":edit ~/.config/nvim/init.lua"),
-					item("󰁗", "Plugins", "p", ":Lazy"),
+					item("󰁗", "Lazy", "p", ":Lazy"),
 					item("󰅚", "Quit", "q", ":q"),
 				},
 			},
