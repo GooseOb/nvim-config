@@ -9,7 +9,7 @@ return {
 		},
 	},
 	config = function()
-		local header = require("ascii").art.text.neovim.sharp
+		local header = require("ascii.text.neovim").sharp
 		table.insert(header, "")
 
 		local function item(icon, desc, key, action)
