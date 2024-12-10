@@ -11,6 +11,8 @@ return {
 	config = function()
 		local header = require("ascii.text.neovim").sharp
 		table.insert(header, "")
+		table.insert(header, "")
+		table.insert(header, "")
 
 		local function item(icon, desc, key, action)
 			return { icon = icon .. "  ", desc = desc, key = key, action = action }
