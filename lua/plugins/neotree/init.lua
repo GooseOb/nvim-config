@@ -24,6 +24,9 @@ return {
 
 		require("neo-tree").setup({
 			popup_border_style = "rounded",
+			window = {
+				position = "float",
+			},
 		})
 
 		vim.api.nvim_set_hl(0, "NeoTreeFloatTitle", { bg = "NONE", fg = "#938AA9" })
