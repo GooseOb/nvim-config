@@ -4,16 +4,9 @@ return {
 	lazy = true,
 	event = "BufReadPost",
 	config = function()
-		local theme = require("lualine.themes.kanagawa")
-
-		for _, mode_theme in pairs(theme) do
-			if mode_theme.c then
-				mode_theme.c.bg = "NONE"
-			end
-		end
 		require("lualine").setup({
 			options = {
-				theme = theme,
+				theme = require("colorschemes.kanagawa").lualine_theme(),
 			},
 			sections = {
 				lualine_a = { "mode" },
