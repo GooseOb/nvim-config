@@ -5,6 +5,9 @@ return {
 	event = "BufReadPost",
 	config = function()
 		require("lualine").setup({
+			options = {
+				theme = require("colorschemes.kanagawa").lualine_theme(),
+			},
 			sections = {
 				lualine_a = { "mode" },
 				lualine_b = {

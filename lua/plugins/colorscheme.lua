@@ -1,2 +1,1 @@
-require("colorschemes.mycoal")
-return {}
+return require("colorschemes.kanagawa").plugin
