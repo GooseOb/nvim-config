@@ -14,6 +14,8 @@ return {
 				"vue",
 				"javascript",
 				"typescript",
+				"javascriptreact",
+				"typescriptreact",
 				"scss",
 				"less",
 				"html",
