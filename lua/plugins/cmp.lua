@@ -38,6 +38,12 @@ return {
 			},
 			default = { "lsp", "path", "snippets", "buffer", "copilot" },
 		},
+		completion = {
+			documentation = {
+				auto_show = true,
+				auto_show_delay_ms = 500,
+			},
+		},
 		appearance = {
 			kind_icons = {
 				Copilot = "",
