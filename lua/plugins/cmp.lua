@@ -80,5 +80,10 @@ return {
 			},
 		},
 	},
+	init = function()
+		vim.api.nvim_set_hl(0, "BlinkCmpMenu", {
+			link = "Normal",
+		})
+	end,
 	opts_extend = { "sources.default" },
 }
