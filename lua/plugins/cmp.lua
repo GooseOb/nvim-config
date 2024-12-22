@@ -1,3 +1,4 @@
+-- TODO: Add nvim-highlight-colors support when it's available
 return {
 	"saghen/blink.cmp",
 	event = "InsertEnter",
