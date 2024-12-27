@@ -14,6 +14,12 @@ return {
 	---@module 'blink.cmp'
 	---@type blink.cmp.Config
 	opts = {
+		enabled = function()
+			if vim.api.nvim_win_get_config(0).relative ~= "" then
+				return false
+			end
+			return true
+		end,
 		keymap = {
 			preset = "default",
 			["<Up>"] = { "select_prev", "fallback" },
@@ -55,6 +61,11 @@ return {
 				auto_show_delay_ms = 500,
 			},
 			menu = {
+				auto_show = function()
+					return vim.bo.buftype ~= "prompt"
+						and vim.b.completion ~= false
+						and vim.bo.filetype ~= "TelescopePrompt"
+				end,
 				draw = {
 					components = {
 						kind_icon = {
