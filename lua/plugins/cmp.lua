@@ -1,3 +1,7 @@
+vim.api.nvim_set_hl(0, "CopilotIcon", {
+	link = "lualine_c_copilot_enabled_normal",
+})
+
 return {
 	"saghen/blink.cmp",
 	event = "InsertEnter",
@@ -68,17 +72,20 @@ return {
 								return icon .. ctx.icon_gap
 							end,
 							highlight = function(ctx)
-								local highlight = "BlinkCmpKind" .. ctx.kind
+								local group = "BlinkCmpKind" .. ctx.kind
+								if ctx.item.source_name == "copilot" then
+									group = "CopilotIcon"
+								end
 								if ctx.item.source_name == "LSP" then
 									local color_item = require("nvim-highlight-colors").format(
 										ctx.item.documentation,
 										{ kind = ctx.kind }
 									)
 									if color_item and color_item.abbr_hl_group then
-										highlight = color_item.abbr_hl_group
+										group = color_item.abbr_hl_group
 									end
 								end
-								return highlight
+								return group
 							end,
 						},
 					},
