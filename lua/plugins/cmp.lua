@@ -18,6 +18,11 @@ return {
 			["<Down>"] = { "select_next", "fallback" },
 			["<Tab>"] = { "select_next", "fallback" },
 			["<CR>"] = { "accept", "fallback" },
+			cmdline = {
+				preset = "enter",
+				["<Tab>"] = { "accept", "fallback" },
+				["<CR>"] = { "fallback" },
+			},
 		},
 
 		sources = {
@@ -39,6 +44,7 @@ return {
 				},
 			},
 			default = { "lsp", "path", "snippets", "buffer", "copilot" },
+			cmdline = { "cmdline", "path" },
 		},
 		completion = {
 			documentation = {
