@@ -4,14 +4,14 @@ return {
 	config = function()
 		local lint = require("lint")
 
-		local eslint = { "eslint_d" }
-
-		lint.linters_by_ft = {
-			javascript = eslint,
-			typescript = eslint,
-			typescriptreact = eslint,
-			javascriptreact = eslint,
-		}
+		lint.linters_by_ft = require("utils.swap").new({
+			eslint_d = {
+				"javascript",
+				"typescript",
+				"javascriptreact",
+				"typescriptreact",
+			},
+		})
 
 		lint.linters.eslint_d = require("lint.util").wrap(lint.linters.eslint_d, function(diagnostic)
 			if diagnostic.message:find("Error: Could not find config file") then
