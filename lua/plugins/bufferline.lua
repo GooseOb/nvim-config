@@ -1,3 +1,10 @@
+local s = vim.keymap.set
+
+s("n", "<leader>x", ":BufferLinePickClose<CR>")
+s("n", "<leader>q", ":bp | bd #<CR>")
+s("n", "<s-Tab>", ":bp<CR>")
+s("n", "<Tab>", ":bn<CR>")
+
 return {
 	"akinsho/bufferline.nvim",
 	version = "*",
