@@ -22,9 +22,9 @@ s("n", "<s-Tab>", ":bp<CR>")
 s("n", "<Tab>", ":bn<CR>")
 
 -- Terminal
-s({ "n", "t" }, "<a-t>", "<cmd>:ToggleTerm direction=vertical size=50<CR>")
+s({ "n", "t" }, "<c-\\>", "<cmd>:ToggleTerm direction=vertical size=50<CR>")
 -- Escape terminal
-s("t", "<esc><esc>", "<C-\\><C-n>")
+s("t", "<esc><esc>", "<c-\\><c-n>")
 
 -- Command shortcuts
 s("n", "gs", ":Gitsigns")
@@ -46,3 +46,8 @@ _G.ReplaceWithYank = function()
 end
 
 s("n", "r", ":set opfunc=v:lua.ReplaceWithYank<CR>g@")
+
+s("v", "R", function()
+	vim.cmd('normal! "vy')
+	vim.api.nvim_feedkeys(":%s/" .. vim.fn.escape(vim.fn.getreg("v"), "\\/") .. "/", "n", false)
+end)
