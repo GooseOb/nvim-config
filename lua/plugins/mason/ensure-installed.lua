@@ -15,4 +15,5 @@ return {
 	"google-java-format",
 	"lua-language-server",
 	"stylua",
+	"json-lsp",
 }

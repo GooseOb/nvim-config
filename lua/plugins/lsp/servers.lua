@@ -6,6 +6,19 @@ return {
 	cssls = {},
 	clangd = {},
 	emmet_ls = {},
+	jsonls = {
+		settings = {
+			json = {
+				schemas = {
+					{
+						fileMatch = { "tsconfig.json" },
+						url = "https://json.schemastore.org/tsconfig",
+					},
+				},
+				validate = { enable = false },
+			},
+		},
+	},
 	jdtls = {
 		cmd = {
 			"jdtls",
