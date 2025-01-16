@@ -6,7 +6,25 @@ return {
 	"saghen/blink.cmp",
 	event = "InsertEnter",
 	dependencies = {
-		"rafamadriz/friendly-snippets",
+		{
+			"L3MON4D3/LuaSnip",
+			lazy = true,
+			dependencies = {
+				{
+					"rafamadriz/friendly-snippets",
+					config = function()
+						require("luasnip.loaders.from_vscode").lazy_load()
+						require("luasnip.loaders.from_vscode").lazy_load({
+							paths = { vim.fn.stdpath("config") .. "/snippets" },
+						})
+					end,
+				},
+			},
+			opts = {
+				history = true,
+				delete_check_events = "TextChanged",
+			},
+		},
 		"giuxtaposition/blink-cmp-copilot",
 	},
 
@@ -27,6 +45,10 @@ return {
 			["<Down>"] = { "select_next", "fallback" },
 			["<Tab>"] = { "select_next", "fallback" },
 			["<CR>"] = { "accept", "fallback" },
+		},
+
+		snippets = {
+			preset = "luasnip",
 		},
 
 		sources = {
