@@ -1,5 +1,8 @@
 return {
 	"stevearc/conform.nvim",
+	dependencies = {
+		"williamboman/mason.nvim",
+	},
 	event = "BufReadPost",
 	config = function()
 		require("conform").setup({
