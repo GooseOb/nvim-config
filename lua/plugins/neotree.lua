@@ -1,5 +1,3 @@
-require("plugins.neotree.mappings")
-
 local is_directory = function(path)
 	local stat = vim.loop.fs_stat(path)
 	return stat and stat.type == "directory"
@@ -15,6 +13,11 @@ return {
 		"nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
 		"MunifTanjim/nui.nvim",
 		-- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+	},
+	keys = {
+		{ "<leader>e", ":Neotree float reveal<CR>" },
+		{ "<leader>E", ":Neotree left reveal<CR>" },
+		{ "<leader>o", ":Neotree float git_status<CR>" },
 	},
 	config = function()
 		vim.fn.sign_define("DiagnosticSignError", { text = " ", texthl = "DiagnosticSignError" })
