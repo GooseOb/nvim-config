@@ -15,18 +15,22 @@ local run = function(cmd)
 			direction = "float",
 			close_on_exit = false,
 		})
-		term:open()
-	elseif not term:is_open() then
+	end
+
+	local is_open = term:is_open()
+	if not is_open then
 		term:open()
 	end
 
 	term:send(cmd, true)
 
 	vim.defer_fn(function()
-		if not term:is_open() then
-			term:open()
+		if not is_open then
+			if not term:is_open() then
+				term:open()
+			end
+			vim.api.nvim_set_current_win(term.window)
 		end
-		vim.api.nvim_set_current_win(term.window)
 	end, 100)
 end
 
@@ -47,6 +51,10 @@ local filetype2cmd = {
 	end,
 	java = function(path)
 		return "javac " .. path .. " && java " .. vim.fn.fnamemodify(path, ":t:r")
+	end,
+	c = function(path)
+		local out = vim.fn.fnamemodify(path, ":t:r")
+		return "gcc " .. path .. " -o " .. out .. " && ./" .. out
 	end,
 }
 
