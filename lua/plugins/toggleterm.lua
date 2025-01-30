@@ -58,16 +58,20 @@ local filetype2cmd = {
 	end,
 }
 
-vim.keymap.set("n", "<a-r>", function()
-	local path = vim.api.nvim_buf_get_name(0)
-	local cmd = filetype2cmd[vim.bo.filetype]
-	run(cmd and cmd(path) or path)
-end)
-
 return {
 	"akinsho/toggleterm.nvim",
 	version = "*",
 	cmd = "ToggleTerm",
+	keys = {
+		{
+			"<a-r>",
+			function()
+				local path = vim.api.nvim_buf_get_name(0)
+				local cmd = filetype2cmd[vim.bo.filetype]
+				run(cmd and cmd(path) or path)
+			end,
+		},
+	},
 	opts = {
 		direction = "vertical",
 		size = 50,
