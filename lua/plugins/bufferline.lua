@@ -1,7 +1,5 @@
 local get_contrast_color = require("utils.get-contrast-color")
 
-local is_picking = false
-
 local border_component = function(char, do_fill)
 	return {
 		text = function(buffer)
@@ -14,6 +12,15 @@ local border_component = function(char, do_fill)
 			return buffer.devicon.color
 		end,
 	}
+end
+
+local is_picking = false
+local picking = function(what)
+	return function()
+		is_picking = true
+		require("cokeline.mappings").pick(what)
+		is_picking = false
+	end
 end
 
 local buf_name = function(buffer)
@@ -35,22 +42,8 @@ return {
 		{ "<s-Tab>", "<Plug>(cokeline-focus-prev)" },
 		{ "<Tab>", "<Plug>(cokeline-focus-next)" },
 		{ "<leader>q", ":bd<CR>" },
-		{
-			"<leader>b",
-			function()
-				is_picking = true
-				require("cokeline.mappings").pick("focus")
-				is_picking = false
-			end,
-		},
-		{
-			"<leader>x",
-			function()
-				is_picking = true
-				require("cokeline.mappings").pick("close")
-				is_picking = false
-			end,
-		},
+		{ "<leader>b", picking("focus") },
+		{ "<leader>x", picking("close") },
 	},
 	opts = {
 		show_if_buffers_are_at_least = 2,
