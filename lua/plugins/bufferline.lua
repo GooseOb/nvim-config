@@ -48,9 +48,6 @@ return {
 	opts = {
 		show_if_buffers_are_at_least = 2,
 		default_hl = {
-			fg = function(buffer)
-				return buffer.is_focused and get_contrast_color(buffer.devicon.color) or "#AAAAAA"
-			end,
 			bg = function(buffer)
 				return buffer.is_focused and buffer.devicon.color or "None"
 			end,
@@ -77,6 +74,11 @@ return {
 			},
 			{
 				text = buf_name,
+				fg = function(buffer)
+					return buffer.is_focused and get_contrast_color(buffer.devicon.color)
+						or buffer.is_modified and "#FFAA00"
+						or "#AAAAAA"
+				end,
 			},
 			border_component("", function(buffer)
 				if buffer.is_last then
