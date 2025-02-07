@@ -1,9 +1,10 @@
 local get_contrast_color = require("utils.get-contrast-color")
 
 local border_component = function(char, do_fill)
+	local space = string.rep(" ", #char)
 	return {
 		text = function(buffer)
-			return buffer.is_focused and char or " "
+			return buffer.is_focused and char or space
 		end,
 		bg = function(buffer)
 			return buffer.is_focused and do_fill(buffer) and buffer.devicon.color or "None"
