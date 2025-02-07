@@ -1,20 +1,102 @@
+local get_contrast_color = require("utils.get-contrast-color")
+
+local is_picking = false
+
+local border_component = function(char, do_fill)
+	return {
+		text = function(buffer)
+			return buffer.is_focused and char or " "
+		end,
+		bg = function(buffer)
+			return buffer.is_focused and do_fill(buffer) and buffer.devicon.color or "None"
+		end,
+		fg = function(buffer)
+			return buffer.devicon.color
+		end,
+	}
+end
+
+local buf_name = function(buffer)
+	local value = buffer.unique_prefix
+		.. buffer.filename
+		.. (buffer.is_modified and " 󰙏 " or buffer.is_readonly and "  " or " ")
+
+	return is_picking and value:sub(2) or value
+end
+
 return {
-	"akinsho/bufferline.nvim",
-	version = "*",
-	keys = {
-		{ "<leader>x", ":BufferLinePickClose<CR>" },
-		{ "<leader>q", ":bp | bd #<CR>" },
-		{ "<s-Tab>", ":bp<CR>" },
-		{ "<Tab>", ":bn<CR>" },
+	"willothy/nvim-cokeline",
+	event = "BufReadPre",
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"nvim-tree/nvim-web-devicons",
 	},
-	event = "VeryLazy",
-	opts = {
-		options = {
-			style_preset = 4, -- no italics
-			show_buffer_close_icons = false,
-			show_close_icon = false,
-			always_show_bufferline = false,
+	keys = {
+		{ "<s-Tab>", "<Plug>(cokeline-focus-prev)" },
+		{ "<Tab>", "<Plug>(cokeline-focus-next)" },
+		{ "<leader>q", ":bd<CR>" },
+		{
+			"<leader>b",
+			function()
+				is_picking = true
+				require("cokeline.mappings").pick("focus")
+				is_picking = false
+			end,
+		},
+		{
+			"<leader>x",
+			function()
+				is_picking = true
+				require("cokeline.mappings").pick("close")
+				is_picking = false
+			end,
 		},
 	},
-	dependencies = { "nvim-tree/nvim-web-devicons" },
+	opts = {
+		show_if_buffers_are_at_least = 2,
+		default_hl = {
+			fg = function(buffer)
+				return buffer.is_focused and get_contrast_color(buffer.devicon.color) or "#AAAAAA"
+			end,
+			bg = function(buffer)
+				return buffer.is_focused and buffer.devicon.color or "None"
+			end,
+		},
+		fill_hl = "Normal",
+		components = {
+			border_component("", function(buffer)
+				return buffer.is_first
+			end),
+			{
+				text = function(buffer)
+					return buffer.devicon.icon .. " "
+				end,
+				fg = function(buffer)
+					return buffer.is_focused and get_contrast_color(buffer.devicon.color) or buffer.devicon.color
+				end,
+			},
+			{
+				text = function(buffer)
+					return is_picking and buffer.pick_letter or ""
+				end,
+				fg = "#000000",
+				bg = "#FF0000",
+			},
+			{
+				text = buf_name,
+			},
+			border_component("", function(buffer)
+				if buffer.is_last then
+					local len = 0
+					for _, buf in ipairs(require("cokeline.buffers").get_visible()) do
+						-- 5 = 2@border + 3@icon
+						len = len + #buf_name(buf) + (is_picking and 6 or 5)
+					end
+					return len >= vim.api.nvim_win_get_width(0)
+				else
+					return false
+				end
+			end),
+		},
+	},
 }
