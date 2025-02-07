@@ -1,7 +1,7 @@
 local get_contrast_color = require("utils.get-contrast-color")
 
 local border_component = function(char, do_fill)
-	local space = string.rep(" ", #char)
+	local space = string.rep(" ", vim.fn.strdisplaywidth(char))
 	return {
 		text = function(buffer)
 			return buffer.is_focused and char or space
