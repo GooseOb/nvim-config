@@ -92,7 +92,7 @@ return {
 						-- 5 = 2@border + 3@icon
 						len = len + #buf_name(buf) + (is_picking and 6 or 5)
 					end
-					return len >= vim.api.nvim_win_get_width(0)
+					return len >= vim.o.columns
 				else
 					return false
 				end
