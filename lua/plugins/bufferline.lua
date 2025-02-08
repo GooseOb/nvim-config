@@ -86,7 +86,7 @@ return {
 					local len = 0
 					for _, buf in ipairs(require("cokeline.buffers").get_visible()) do
 						-- 5 = 2@border + 3@icon
-						len = len + #buf_name(buf) + (is_picking and 6 or 5)
+						len = len + vim.fn.strdisplaywidth(buf_name(buf)) + (is_picking and 6 or 5)
 					end
 					return len >= vim.o.columns
 				else
