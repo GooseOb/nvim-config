@@ -1,19 +1,16 @@
-local builtin = require("telescope.builtin")
-local actions = require("telescope.actions")
-local action_state = require("telescope.actions.state")
-
 local function search_buf()
-	builtin.buffers({
+	require("telescope.builtin").buffers({
 		sort_mru = true,
 		ignore_current_buffer = true,
 		show_all_buffers = false,
 		attach_mappings = function(prompt_bufnr, map)
 			local refresh_buffer_searcher = function()
-				actions.close(prompt_bufnr)
+				require("telescope.actions").close(prompt_bufnr)
 				vim.schedule(search_buf)
 			end
 
 			local delete_multiple_buf = function()
+				local action_state = require("telescope.actions.state")
 				local picker = action_state.get_current_picker(prompt_bufnr)
 				local selection = picker:get_multi_selection()
 				if next(selection) == nil then

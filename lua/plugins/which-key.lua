@@ -5,12 +5,13 @@ return {
 		local wk = require("which-key")
 
 		wk.add({
-			{ "<leader>/", desc = "Comment" },
 			{ "<leader>e", desc = "File Manager" },
 			{ "<leader>h", desc = "No highlight" },
 			{ "<leader>o", desc = "Git Status" },
 			{ "<leader>w", desc = "Save" },
 			{ "<leader>q", desc = "Close Current Buffer" },
+			{ "<leader>b", desc = "Pick Buffer" },
+			{ "<leader>x", desc = "Pick Buffer to Close" },
 
 			{ "<leader>f", group = "Find" },
 			{ "<leader>fb", desc = "Find Buffer" },
@@ -24,11 +25,11 @@ return {
 			{ "<leader>gs", desc = "Status" },
 
 			{ "<leader>l", group = "LSP" },
-			{ "<leader>lD", desc = "Hover diagnostic" },
-			{ "<leader>la", desc = "Action" },
-			{ "<leader>ld", desc = "Diagnostic" },
+			{ "<leader>D", desc = "Hover diagnostic" },
+			{ "<leader><CR>", desc = "Action" },
+			{ "<leader>d", desc = "Diagnostic" },
+			{ "<leader>r", desc = "Rename" },
 			{ "<leader>lf", desc = "Format" },
-			{ "<leader>lr", desc = "Rename" },
 			{ "<leader>ls", desc = "Symbol" },
 		}, { prefix = "<leader>" })
 	end,
