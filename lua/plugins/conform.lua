@@ -35,13 +35,10 @@ return {
 					"bash",
 				},
 			}),
-		})
-
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			pattern = "*",
-			callback = function(args)
-				require("conform").format({ bufnr = args.buf })
-			end,
+			format_on_save = {
+				timeout_ms = 1000,
+				lsp_format = "fallback",
+			},
 		})
 	end,
 }
