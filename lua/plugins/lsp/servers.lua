@@ -6,6 +6,7 @@ return {
 	cssls = {},
 	clangd = {},
 	emmet_ls = {},
+	svelte = {},
 	jsonls = {
 		settings = {
 			json = {

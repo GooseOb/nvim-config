@@ -1,5 +1,6 @@
 return {
 	"bash-language-server",
+	"svelte-language-server",
 	"shfmt",
 	"clangd",
 	"rust-analyzer",
