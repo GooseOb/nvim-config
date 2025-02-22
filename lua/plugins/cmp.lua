@@ -48,6 +48,9 @@ return {
 		sources = {
 			default = { "lsp", "path", "snippets", "buffer" },
 		},
+		cmdline = {
+			enabled = false,
+		},
 		completion = {
 			accept = { auto_brackets = { enabled = false } },
 			documentation = {
