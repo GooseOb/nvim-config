@@ -28,7 +28,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		-- end, opts)
 		-- s('n', '<Leader>D', vim.lsp.buf.type_definition, opts)
 		s("n", "<Leader>r", vim.lsp.buf.rename, opts)
-		s({ "n", "v" }, "<Leader><CR>", vim.lsp.buf.code_action, opts)
+		s({ "n", "v" }, "<a-CR>", vim.lsp.buf.code_action, opts)
 		-- s('n', 'gr', vim.lsp.buf.references, opts)
 		s("n", "<Leader>lf", function()
 			vim.lsp.buf.format({ async = true })

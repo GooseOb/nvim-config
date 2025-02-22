@@ -1,4 +1,4 @@
-vim.keymap.set({ "n", "t" }, "<c-\\>", "<cmd>:ToggleTerm<CR>")
+vim.keymap.set({ "n", "t" }, "<a-\\>", "<cmd>:ToggleTerm<CR>")
 
 local run = function(cmd)
 	local term = nil

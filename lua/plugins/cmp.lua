@@ -20,7 +20,6 @@ return {
 				delete_check_events = "TextChanged",
 			},
 		},
-		"giuxtaposition/blink-cmp-copilot",
 	},
 
 	version = "*",

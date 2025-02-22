@@ -2,9 +2,7 @@ return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
 	config = function()
-		local wk = require("which-key")
-
-		wk.add({
+		require("which-key").add({
 			{ "<leader>e", desc = "File Manager" },
 			{ "<leader>h", desc = "No highlight" },
 			{ "<leader>o", desc = "Git Status" },
@@ -26,7 +24,6 @@ return {
 
 			{ "<leader>l", group = "LSP" },
 			{ "<leader>D", desc = "Hover diagnostic" },
-			{ "<leader><CR>", desc = "Action" },
 			{ "<leader>d", desc = "Diagnostic" },
 			{ "<leader>r", desc = "Rename" },
 			{ "<leader>lf", desc = "Format" },
