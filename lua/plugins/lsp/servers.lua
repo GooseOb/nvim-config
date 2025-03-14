@@ -7,6 +7,7 @@ return {
 	clangd = {},
 	emmet_ls = {},
 	svelte = {},
+	tailwindcss = {},
 	jsonls = {
 		settings = {
 			json = {
