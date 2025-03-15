@@ -24,14 +24,3 @@ s("t", "<esc><esc>", "<c-\\><c-n>")
 s({ "n", "i" }, "<c-s>", "<cmd>:w<CR>")
 
 s("n", "<leader>h", ":nohlsearch<CR>")
-
-_G.ReplaceWithYank = function()
-	vim.cmd('normal! `[v`]"_dP')
-end
-
-s("n", "r", ":set opfunc=v:lua.ReplaceWithYank<CR>g@")
-
-s("v", "R", function()
-	vim.cmd('normal! "vy')
-	vim.api.nvim_feedkeys(":%s/" .. vim.fn.escape(vim.fn.getreg("v"), "\\/") .. "/", "n", false)
-end)
