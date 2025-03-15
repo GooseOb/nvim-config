@@ -13,7 +13,7 @@ return {
 		{ "<leader>ls", ":Telescope lsp_document_symbols<CR>" },
 		{ "gr", ":Telescope lsp_references<CR>" },
 		{ "gd", ":Telescope lsp_definitions<CR>" },
-		{ "<leader><Tab>", require("plugins.telescope.searchbuf") },
+		{ "<leader><Tab>", ":Telescope buffers<CR>" },
 	},
 	dependencies = { "nvim-lua/plenary.nvim", "BurntSushi/ripgrep" },
 	opts = {
