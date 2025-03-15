@@ -3,9 +3,16 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons", "AndreM222/copilot-lualine" },
 	event = "BufReadPost",
 	config = function()
+		local theme = require("lualine.themes.kanagawa")
+		for _, mode_theme in pairs(theme) do
+			if mode_theme.c then
+				mode_theme.c.bg = "NONE"
+			end
+		end
+
 		require("lualine").setup({
 			options = {
-				theme = require("colorschemes.kanagawa").lualine_theme(),
+				theme = theme,
 			},
 			sections = {
 				lualine_a = { "mode" },

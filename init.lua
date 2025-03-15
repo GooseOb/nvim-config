@@ -1,7 +1,4 @@
 require("core.mappings")
 require("core.plugins")
 require("core.configs")
-vim.schedule(function()
-	require("my-commands")
-end)
 require("core.typo")
