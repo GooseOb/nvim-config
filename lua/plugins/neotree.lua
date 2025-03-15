@@ -1,5 +1,5 @@
 local is_directory = function(path)
-	local stat = vim.loop.fs_stat(path)
+	local stat = vim.uv.fs_stat(path)
 	return stat and stat.type == "directory"
 end
 
