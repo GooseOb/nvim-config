@@ -30,6 +30,13 @@ return {
 		},
 	},
 	html = {},
+	basedpyright = {
+		settings = {
+			basedpyright = {
+				typeCheckingMode = "off",
+			},
+		},
+	},
 	rust_analyzer = {
 		settings = {
 			["rust-analyzer"] = {

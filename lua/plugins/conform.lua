@@ -11,6 +11,9 @@ return {
 				rust = { "rustfmt" },
 				java = { "google-java-format" },
 			}, {
+				black = {
+					"python",
+				},
 				prettier = {
 					"css",
 					"vue",

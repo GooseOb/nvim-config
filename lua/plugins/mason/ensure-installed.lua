@@ -11,10 +11,12 @@ return {
 	"prettier",
 	-- "prettierd",
 	"typescript-language-server",
+	"tailwindcss-language-server",
 	"vue-language-server",
 	"jdtls",
 	"google-java-format",
 	"lua-language-server",
 	"stylua",
 	"json-lsp",
+	"basedpyright",
 }
