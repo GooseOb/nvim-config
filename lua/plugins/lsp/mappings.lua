@@ -4,8 +4,13 @@ local s = vim.keymap.set
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 s("n", "<leader>D", vim.diagnostic.open_float)
 s("n", "<leader>d", vim.diagnostic.setloclist)
-s("n", "[d", vim.diagnostic.goto_prev)
-s("n", "]d", vim.diagnostic.goto_next)
+
+vim.schedule(function()
+	vim.api.nvim_del_keymap("n", "gra")
+	vim.api.nvim_del_keymap("n", "gri")
+	vim.api.nvim_del_keymap("n", "grn")
+	vim.api.nvim_del_keymap("n", "grr")
+end)
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer
