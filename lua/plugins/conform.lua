@@ -74,7 +74,6 @@ return {
 			callback = function(args)
 				require("conform").format({})
 				if is_prettier_config_in_root() then
-					print("Using Prettier config in root")
 					require("conform").format({
 						bufnr = args.buf,
 						async = true,
@@ -82,7 +81,6 @@ return {
 						lsp_fallback = true,
 					})
 				else
-					print("Using default formatters")
 					require("conform").format({
 						bufnr = args.buf,
 						async = true,
