@@ -42,7 +42,7 @@ return {
 	keys = {
 		{ "<s-Tab>", "<Plug>(cokeline-focus-prev)" },
 		{ "<Tab>", "<Plug>(cokeline-focus-next)" },
-		{ "<leader>q", ":bd<CR>" },
+		{ "<leader>q", ":bp | bd #<CR>" },
 		{ "<leader>b", picking("focus") },
 		{ "<leader>x", picking("close") },
 	},

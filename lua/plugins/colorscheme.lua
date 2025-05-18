@@ -19,5 +19,6 @@ return {
 	init = function()
 		require("kanagawa").load("wave")
 		vim.api.nvim_set_hl(0, "TabLineFill", { bg = "none" })
+		-- vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#54546D" })
 	end,
 }

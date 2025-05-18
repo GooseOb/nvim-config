@@ -23,4 +23,7 @@ return {
 			layout_config = { prompt_position = "top" },
 		},
 	},
+	init = function()
+		vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "none" })
+	end,
 }

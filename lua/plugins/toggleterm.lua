@@ -56,6 +56,10 @@ local filetype2cmd = {
 		local out = vim.fn.fnamemodify(path, ":t:r")
 		return "gcc " .. path .. " -o " .. out .. " && ./" .. out
 	end,
+	cpp = function(path)
+		local out = vim.fn.fnamemodify(path, ":t:r")
+		return "g++ " .. path .. " -o " .. out .. " && ./" .. out
+	end,
 }
 
 return {

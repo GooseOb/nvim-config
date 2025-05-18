@@ -30,6 +30,7 @@ return {
 		},
 	},
 	html = {},
+	-- biome = {},
 	basedpyright = {
 		settings = {
 			basedpyright = {

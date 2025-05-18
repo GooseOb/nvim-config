@@ -17,6 +17,7 @@ return {
 				prettier = {
 					"css",
 					"vue",
+					"svelte",
 					"javascript",
 					"typescript",
 					"javascriptreact",
