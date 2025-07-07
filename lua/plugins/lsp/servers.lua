@@ -2,6 +2,13 @@ local data_path = vim.fn.stdpath("data")
 local mason_packages_path = data_path .. "/mason/packages"
 
 return {
+	tinymist = {
+		settings = {
+			formatterMode = "typstyle",
+			exportPdf = "disable",
+			semanticTokens = "disable",
+		},
+	},
 	ts_ls = {},
 	cssls = {},
 	clangd = {},

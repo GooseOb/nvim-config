@@ -1,23 +1,3 @@
-local is_prettier_config_in_root = function()
-	local root = vim.fn.getcwd()
-	local prettier_config_files = {
-		".prettierrc",
-		".prettierrc.json",
-		".prettierrc.yml",
-		".prettierrc.yaml",
-		".prettierrc.toml",
-		".prettierrc.js",
-		".prettierrc.cjs",
-		"prettier.config.js",
-		"prettier.config.cjs",
-	}
-	for _, file in ipairs(prettier_config_files) do
-		if vim.fn.filereadable(root .. "/" .. file) == 1 then
-			return true
-		end
-	end
-end
-
 return {
 	"stevearc/conform.nvim",
 	dependencies = {
@@ -68,26 +48,15 @@ return {
 					"bash",
 				},
 			}),
-		})
-		vim.api.nvim_create_autocmd("BufWritePre", {
-			pattern = "*",
-			callback = function(args)
-				require("conform").format({})
-				if is_prettier_config_in_root() then
-					require("conform").format({
-						bufnr = args.buf,
-						async = true,
-						formatters = { "prettier" },
-						lsp_fallback = true,
-					})
-				else
-					require("conform").format({
-						bufnr = args.buf,
-						async = true,
-						lsp_fallback = true,
-					})
-				end
-			end,
+			formatters = {
+				biome = {
+					require_cwd = true,
+				},
+			},
+			format_on_save = {
+				timeout_ms = 1000,
+				lsp_format = "fallback",
+			},
 		})
 	end,
 }
