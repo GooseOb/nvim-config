@@ -3,10 +3,10 @@ local M = {}
 M.merge = function(target, source)
 	for key, values in pairs(source) do
 		for _, value in ipairs(values) do
-			if target[key] == nil then
+			if target[value] == nil then
 				target[value] = { key }
 			else
-				table.insert(target[key], value)
+				table.insert(target[value], key)
 			end
 		end
 	end
