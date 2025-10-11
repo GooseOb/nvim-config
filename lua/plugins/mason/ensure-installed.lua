@@ -9,7 +9,7 @@ return {
 	"html-lsp",
 	"css-lsp",
 	"prettier",
-	-- "prettierd",
+	"prettierd",
 	"typescript-language-server",
 	"tailwindcss-language-server",
 	"vue-language-server",
@@ -19,4 +19,5 @@ return {
 	"stylua",
 	"json-lsp",
 	"basedpyright",
+	"actionlint",
 }

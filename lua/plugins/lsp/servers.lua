@@ -9,7 +9,13 @@ return {
 			semanticTokens = "disable",
 		},
 	},
-	ts_ls = {},
+	biome = {},
+	ts_ls = {
+		on_attach = function(client)
+			client.server_capabilities.documentFormattingProvider = false
+			client.server_capabilities.documentRangeFormattingProvider = false
+		end,
+	},
 	cssls = {},
 	clangd = {},
 	emmet_ls = {},
@@ -76,7 +82,7 @@ return {
 			},
 		},
 	},
-	volar = {
+	vue_ls = {
 		filetypes = {
 			"vue",
 		},

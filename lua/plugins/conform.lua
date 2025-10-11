@@ -14,16 +14,7 @@ return {
 				black = {
 					"python",
 				},
-				biome = {
-					"json",
-					"javascript",
-					"typescript",
-					"css",
-					"javascriptreact",
-					"typescriptreact",
-					"markdown",
-				},
-				prettier = {
+				prettierd = {
 					"css",
 					"vue",
 					"svelte",
@@ -48,14 +39,10 @@ return {
 					"bash",
 				},
 			}),
-			formatters = {
-				biome = {
-					require_cwd = true,
-				},
-			},
+
 			format_on_save = {
 				timeout_ms = 1000,
-				lsp_format = "fallback",
+				lsp_format = "prefer",
 			},
 		})
 	end,
