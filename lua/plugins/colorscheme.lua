@@ -2,10 +2,13 @@ return {
 	"rebelot/kanagawa.nvim",
 	lazy = false,
 	opts = {
-		compile = true,
-		keywordStyle = { italic = false },
-		commentStyle = { italic = false },
-		colors = {
+		compile        = true,
+		typeStyle      = { bold = false },
+		functionStyle  = { bold = false },
+		keywordStyle   = { italic = false, bold = false },
+		commentStyle   = { italic = false },
+		statementStyle = { bold = false },
+		colors         = {
 			theme = {
 				all = {
 					ui = {
@@ -14,7 +17,13 @@ return {
 				},
 			},
 		},
-		transparent = true,
+		transparent    = true,
+		overrides      = function()
+			return {
+				Boolean = { bold = false },
+			}
+		end,
+
 	},
 	init = function()
 		require("kanagawa").load("wave")
